@@ -6,7 +6,8 @@ RUN  apt update && apt upgrade -y && apt install python3-pip libtesseract-dev te
 
 
 RUN pip install pillow opencv-python pytesseract tesseract-ocr
+RUN ln -s /usr/bin/tesseract /bin/tesseract
 
 WORKDIR /code
-# entrypoint ['python3', '-c', 'hello.py']
-CMD '/bin/bash'
+# entrypoint ["python3", "-c", "hello.py"]
+CMD [ "/bin/bash", "-c", "echo \"hello\" && sleep 3600" ]
