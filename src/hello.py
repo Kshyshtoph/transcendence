@@ -2,15 +2,17 @@
 import cv2
 import pytesseract
 import sys
+import os
 # Mention the installed location of Tesseract-OCR in your system
 pytesseract.pytesseract.tesseract_cmd = '/bin/tesseract'  # In case using colab after installing above modules
-print(sys.argv)
+
 n=""
 if len(sys.argv) > 1 :
     n=sys.argv[1]
 
-input="sample"+n+'.jpg'
-output="recognized"+n+'.txt'
+
+input=os.getcwd() + "/input/sample"+n+'.jpg'
+output=os.getcwd() + "/dist/recognized"+n+'.txt'
 print(input)
 
 # Read image from which text needs to be extracted
