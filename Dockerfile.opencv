@@ -1,0 +1,12 @@
+# Install minimal prerequisites (Ubuntu 18.04 as reference)
+FROM ubuntu:18.04
+WORKDIR /home/hello
+
+RUN  apt update && apt upgrade -y && apt install python3-pip libtesseract-dev tesseract-ocr -y && python3 -m pip install --upgrade pip 
+
+
+RUN pip install pillow opencv-python pytesseract tesseract-ocr
+
+WORKDIR /code
+# entrypoint ['python3', '-c', 'hello.py']
+CMD '/bin/bash'

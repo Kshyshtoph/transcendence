@@ -1,0 +1,8 @@
+services:
+  opencv:
+    image: opencv
+    build:
+      context: .
+      dockerfile: Dockerfile.opencv
+    volumes:
+        - ./:/code
